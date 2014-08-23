@@ -1,11 +1,13 @@
-# Spoilers for NodeBB
+# NodeBB: Buttons Galore
 
-Allows you to embed spoilers in NodeBB post content. Just use the following syntax, which is similar to that found on StackExchange.
-
-```
->! spoiler text here
-```
+This plugin aims to add several buttons to the NodeBB composer in the future. As for now, I'm still trying to leanr how to accomplish this.
+>
+>  ```
+>  Insert Code Here
+>  ```
+>
 
 ## Installation
 
-    npm install nodebb-plugin-spoilers
+    Not on NPM.
+    Do not install this, it will will explode your NodeBB install.
