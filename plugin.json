@@ -1,17 +1,17 @@
 {
-	"id": "nodebb-plugin-spoilers",
-	"name": "Spoilers for NodeBB",
-	"description": "Allows you to embed spoilers in NodeBB post content",
-	"url": "https://github.com/psychobunny/nodebb-plugin-spoilers",
+	"id": "nodebb-plugin-buttons-galore",
+	"name": "NodeBB: Buttons Galore",
+	"description": "Adds several buttons to the NodeBB composer.",
+	"url": "https://github.com/TedRinehart/nodebb-plugin-buttons-galore",
 	"library": "./library.js",
 	"hooks": [
 		{ "hook": "filter:post.parse", "method": "parse", "callbacked": true, "priority": 6 }
 	],
 	"staticDir": "./static",
 	"less": [
-    	"./static/spoilers.less"
+    	"./static/buttons.less"
     ],
     "scripts": [
-		"static/spoilers.js"
+		"static/buttons.js"
 	]
 }
