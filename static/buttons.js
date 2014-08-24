@@ -9,5 +9,14 @@ $('document').ready(function() {
 				controls.updateTextareaSelection(textarea, selectionStart + 3, selectionEnd + 3);
 			}
 		});
+		composer.addButton('fa fa-strikethrough', function(textarea, selectionStart, selectionEnd) {
+			if(selectionStart === selectionEnd){
+				controls.insertIntoTextarea(textarea, '~~Insert Text Here~~');
+				controls.updateTextareaSelection(textarea, selectionStart + 3, selectionStart + 26);
+			} else {
+				controls.wrapSelectionInTextareaWith(textarea, '~~','~~');
+				controls.updateTextareaSelection(textarea, selectionStart + 3, selectionEnd + 3);
+			}
+		});
 	});
 });
