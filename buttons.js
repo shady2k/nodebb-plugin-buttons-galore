@@ -21,10 +21,10 @@ $('document').ready(function() {
 		composer.addButton('fa fa-quote-right', function(textarea, selectionStart, selectionEnd) {
 			if(selectionStart === selectionEnd){
 				controls.insertIntoTextarea(textarea, '@Username / Website said:\n> \n\n\n');
-				controls.updateTextareaSelection(textarea, selectionStart + 4, selectionEnd + 31);
+				controls.updateTextareaSelection(textarea, selectionStart + 28, selectionEnd + 28);
 			} else {
-				controls.wrapSelectionInTextareaWith(textarea, '@Username / Website said:\n> \n\n\n');
-				controls.updateTextareaSelection(textarea, selectionStart + 4, selectionEnd + 4);
+				controls.wrapSelectionInTextareaWith(textarea, '@Username / Website said:\n> ','\n\n\n');
+				controls.updateTextareaSelection(textarea, selectionStart + 28, selectionEnd + 28);
 			}
 		});		
 
