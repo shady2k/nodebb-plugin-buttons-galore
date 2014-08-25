@@ -10,14 +10,14 @@ This plugin aims to add several buttons to the NodeBB composer in the future. As
   ```
   
 
-##Wishlist
-* Quotes (fa-quote-left)
-* Underline (fa-underline)
-* Alignments
+##Future? 
+* Quotes - _Ideally for citation of a webpage, or splitting up another user's post for comment_ (fa-quote-left)
+* Underline (fa-underline) - _Will require an HTML span_
+* Alignments - _Will require an HTML span, as GitHub Markdown only allows for alignment of tables by default_
   * Left (fa-align-left)
   * Center (fa-align-center)
   * Right (fa-align-right)
-* Change order of buttons in composer / mesh with default ones
+* Change order of buttons in composer / mesh with default ones - _This way Undersline and strikethrough could be closer to Bold and Italics_
 
 ### Regarding Colors and Spoilers
 There are already plugins for NodeBB that allow the use of spoilers and colors in posts, so I won't be incorporating them into this plugin. As a side note, this entire project is already a fork from psychobunny's spoilers plugin. I don't want to step on the toes of these plugin authors.
@@ -26,4 +26,4 @@ There are already plugins for NodeBB that allow the use of spoilers and colors i
 
 **Not on NPM**
 
-When? ~75% Wishlist
+When? Good question.
