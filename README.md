@@ -4,14 +4,15 @@ This plugin aims to add several buttons to the NodeBB composer in the future. As
 
 
 ##Accomplished
-* ~~Strikethrough effect~~
-* ```
+~~Strikethrough effect~~
+```
   Code tags
   ```
   
+> Easy Quote button for webistes or a user
+  
 
 ##Future? 
-* Quotes - _Ideally for citation of a webpage, or splitting up another user's post for comment_ (fa-quote-left)
 * Underline (fa-underline) - _Will require an HTML span_
 * Alignments - _Will require an HTML span, as GitHub Markdown only allows for alignment of tables by default_
   * Left (fa-align-left)
