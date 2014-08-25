@@ -9,7 +9,7 @@ This plugin aims to add several buttons to the NodeBB composer in the future. As
   Code tags
   ```
   
-> Easy Quote button for webistes or a user
+> Easy Quote button for websites or a user
   
 
 ##Future? 
@@ -25,6 +25,4 @@ There are already plugins for NodeBB that allow the use of spoilers and colors i
 
 ## Installation
 
-**Not on NPM**
-
-When? Good question.
+npm install nodebb-plugin-buttons-galore
