@@ -3,10 +3,22 @@
 var plugin = {};
 
 plugin.parse = function(postContent, callback) {
-	// this regex could be better
+
+	//console.log(postContent);
+
 	postContent = postContent
-		.replace(/<p>! *([\S\s]*?)<\/p>/gm, '</blockquote><blockquote class="code"><p>$1</p></blockquote><blockquote>')
-		.replace(/<blockquote>\s*<\/blockquote>/g, '');
+			//Handle line breaks inside a paragraph.
+			.replace(/[^<\/p>](\n)/g, "<br>")
+			//Text align left
+			.replace(/<p>&lt;-([^-]*(?:(?!&lt;-+|&lt;-)*)*)&lt;-<\/p>/gm,'<p class="text-left">$1</p>')
+			//Text align center
+			.replace(/<p>-&gt;([^-]*(?:(?!-&gt;+|&lt;-)*)*)&lt;-<\/p>/gm,'<p class="text-center">$1</p>')
+			//Text align right
+			.replace(/<p>-&gt;([^-]*(?:(?!-&gt;+|-&gt;)*)*)-&gt;<\/p>/gm,'<p class="text-right">$1</p>')
+			//Text align center
+			.replace(/<p>=&gt;([^=]*(?:(?!=&gt;+|&lt;=)*)*)&lt;=<\/p>/gm,'<p class="text-justify">$1</p>')
+			//Underlined text.
+			.replace(/-([\S\s]*?)-/g, "<u>$1</u>");
 
 	callback(null, postContent);
 };
