@@ -18,7 +18,7 @@ plugin.parse = function(postContent, callback) {
 			//Text align center
 			.replace(/<p>=&gt;([^=]*(?:(?!=&gt;+|&lt;=)*)*)&lt;=<\/p>/gm,'<p class="text-justify">$1</p>')
 			//Underlined text.
-			.replace(/-([\S\s]*?)-/g, "<u>$1</u>");
+			.replace(/~([\S\s]*?)~/g, "<u>$1</u>");
 
 	callback(null, postContent);
 };

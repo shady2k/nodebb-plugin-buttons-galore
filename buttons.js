@@ -11,10 +11,10 @@ $('document').ready(function() {
 		});
 		composer.addButton('fa fa-underline', function(textarea, selectionStart, selectionEnd) {
 			if(selectionStart === selectionEnd){
-				controls.insertIntoTextarea(textarea, '-Insert Text Here-');
+				controls.insertIntoTextarea(textarea, '~Insert Text Here~');
 				controls.updateTextareaSelection(textarea, selectionStart + 1, selectionEnd + 17);
 			} else {
-				controls.wrapSelectionInTextareaWith(textarea, '-','-');
+				controls.wrapSelectionInTextareaWith(textarea, '~','~');
 				controls.updateTextareaSelection(textarea, selectionStart + 1, selectionEnd + 2);
 			}
 		});	
