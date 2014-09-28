@@ -24,8 +24,26 @@
   "bugs": {
     "url": "https://github.com/TedRinehart/nodebb-plugin-buttons-galore/issues"
   },
-  "readme": "",
-  "readmeFilename": "README.md",
-  "_id": "nodebb-plugin-buttons-galore@0.0.2",
-  "_from": "nodebb-plugin-buttons-galore@~0.0.2"
+  "_id": "nodebb-plugin-buttons-galore@0.0.3",
+  "_from": "nodebb-plugin-buttons-galore@*",
+  "gitHead": "7a05d9c2970e831632b260a827dc786868cd7767",
+  "homepage": "https://github.com/TedRinehart/nodebb-plugin-buttons-galore",
+  "_shasum": "fd38cd3f5ddc13514bc0c7addfe975de4e29e483",
+  "_npmVersion": "1.4.23",
+  "_npmUser": {
+    "name": "tedrinehart",
+    "email": "theodorerinehart@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "tedrinehart",
+      "email": "theodorerinehart@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "fd38cd3f5ddc13514bc0c7addfe975de4e29e483",
+    "tarball": "http://registry.npmjs.org/nodebb-plugin-buttons-galore/-/nodebb-plugin-buttons-galore-0.0.3.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/nodebb-plugin-buttons-galore/-/nodebb-plugin-buttons-galore-0.0.3.tgz"
 }
