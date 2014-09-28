@@ -6,7 +6,8 @@ This plugin aims to add several buttons to the NodeBB composer in the future. As
 ##Accomplished
 * Underline (esiao)
 * Alignment of content (esiao)
-~~Strikethrough effect~~
+* ~~Strikethrough effect~~
+
 ```
   Code tags
   ```
