@@ -8,7 +8,7 @@ plugin.parse = function(postContent, callback) {
 
 	postContent = postContent
 			//Handle line breaks inside a paragraph.
-			.replace(/[^<\/p>](\n)/g, "<br>")
+			.replace(/[^\S](\n)/g, "<br>")
 			//Text align left
 			.replace(/<p>&lt;-([^-]*(?:(?!&lt;-+|&lt;-)*)*)&lt;-<\/p>/gm,'<p class="text-left">$1</p>')
 			//Text align center
