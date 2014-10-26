@@ -10,15 +10,15 @@ plugin.parse = function(postContent, callback) {
 			//Handle line breaks inside a paragraph.
 			.replace(/[^\S](\n)/g, "<br>")
 			//Text align left
-			.replace(/<p>&lt;-([^\n]*(?:(?!&lt;-+|&lt;-)*)*)&lt;-<\/p>/gm,'<p class="text-left">$1</p>')
+			.replace(/[^`]?<p>&lt;-([^\n]*(?:(?!&lt;-+|&lt;-)*)*)&lt;-<\/p>/gm,'<p class="text-left">$1</p>')
 			//Text align center
-			.replace(/<p>-&gt;([^\n]*(?:(?!-&gt;+|&lt;-)*)*)&lt;-<\/p>/gm,'<p class="text-center">$1</p>')
+			.replace(/[^`]?<p>-&gt;([^\n]*(?:(?!-&gt;+|&lt;-)*)*)&lt;-<\/p>/gm,'<p class="text-center">$1</p>')
 			//Text align right
-			.replace(/<p>-&gt;([^\n]*(?:(?!-&gt;+|-&gt;)*)*)-&gt;<\/p>/gm,'<p class="text-right">$1</p>')
+			.replace(/[^`]?<p>-&gt;([^\n]*(?:(?!-&gt;+|-&gt;)*)*)-&gt;<\/p>/gm,'<p class="text-right">$1</p>')
 			//Text align center
-			.replace(/<p>=&gt;([^\n]*(?:(?!=&gt;+|&lt;=)*)*)&lt;=<\/p>/gm,'<p class="text-justify">$1</p>')
+			.replace(/[^`]?<p>=&gt;([^\n]*(?:(?!=&gt;+|&lt;=)*)*)&lt;=<\/p>/gm,'<p class="text-justify">$1</p>')
 			//Underlined text.
-			.replace(/~([\S\s]*?)~/g, "<u>$1</u>");
+			.replace(/[^`]?~([\S\s]*?)~/g, "<u>$1</u>");
 
 	callback(null, postContent);
 };
