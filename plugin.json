@@ -5,7 +5,9 @@
 	"url": "https://github.com/TedRinehart/nodebb-plugin-buttons-galore",
 	"library": "./library.js",
 	"hooks": [
-		{ "hook": "filter:post.parse", "method": "parse", "callbacked": true, "priority": 10 }
+		{ "hook": "filter:parse.post", "method": "parse" },
+		{ "hook": "filter:parse.signature", "method": "parse" },
+		{ "hook": "filter:parse.raw", "method": "parse" }
 	],
 
         "scripts": [

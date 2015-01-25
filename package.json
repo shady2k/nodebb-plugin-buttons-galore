@@ -1,0 +1,53 @@
+{
+  "name": "nodebb-plugin-buttons-galore",
+<<<<<<< HEAD
+  "version": "0.0.6",
+=======
+  "version": "0.0.4",
+>>>>>>> 2dfb34e0aef5cec27042f2cfeadaa511b0f62608
+  "description": "Allows you to take NodeBB's composer to the next level to provide more user-friendly buttons.",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TedRinehart/nodebb-plugin-buttons-galore"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "composer",
+    "buttons"
+  ],
+  "author": {
+    "name": "Ted Rinehart",
+    "email": "theodorerinehart@gmail.com"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/TedRinehart/nodebb-plugin-buttons-galore/issues"
+  },
+  "_id": "nodebb-plugin-buttons-galore@0.0.3",
+  "_from": "nodebb-plugin-buttons-galore@*",
+  "gitHead": "7a05d9c2970e831632b260a827dc786868cd7767",
+  "homepage": "https://github.com/TedRinehart/nodebb-plugin-buttons-galore",
+  "_shasum": "fd38cd3f5ddc13514bc0c7addfe975de4e29e483",
+  "_npmVersion": "1.4.23",
+  "_npmUser": {
+    "name": "tedrinehart",
+    "email": "theodorerinehart@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "tedrinehart",
+      "email": "theodorerinehart@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "fd38cd3f5ddc13514bc0c7addfe975de4e29e483",
+    "tarball": "http://registry.npmjs.org/nodebb-plugin-buttons-galore/-/nodebb-plugin-buttons-galore-0.0.3.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/nodebb-plugin-buttons-galore/-/nodebb-plugin-buttons-galore-0.0.3.tgz"
+}
