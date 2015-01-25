@@ -1,10 +1,6 @@
 {
   "name": "nodebb-plugin-buttons-galore",
-<<<<<<< HEAD
   "version": "0.0.6",
-=======
-  "version": "0.0.4",
->>>>>>> 2dfb34e0aef5cec27042f2cfeadaa511b0f62608
   "description": "Allows you to take NodeBB's composer to the next level to provide more user-friendly buttons.",
   "main": "library.js",
   "scripts": {
