@@ -3,7 +3,7 @@
 This plugin aims to add several buttons to the NodeBB composer in the future. As for now, I'm still trying to learn how to accomplish this without breaking everything (which this plugin has, a few times). This plugin is designed for those using Github flavored Markdown (why wouldn't you be?). As a result, make sure that your NodeBB install is using this Markdown flavor.
 
 
-##Accomplished
+## Accomplished
 * Underline (esiao)
 * Alignment of content (esiao)
 * ~~Strikethrough effect~~
@@ -15,8 +15,8 @@ This plugin aims to add several buttons to the NodeBB composer in the future. As
 > Easy Quote button for websites or a user
   
 
-##Future? 
-* Change order of buttons in composer / mesh with default ones - _This way Undersline and strikethrough could be closer to Bold and Italics_
+## Future? 
+* Change order of buttons in composer / mesh with default ones - _This way Underline and strikethrough could be closer to Bold and Italics_
 * Allow admins to disable specific buttons
 
 ### Regarding Colors and Spoilers
