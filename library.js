@@ -1,64 +1,55 @@
-"use strict";
+(function(module) {
+        "use strict";
+        var plugin = {};
 
-var plugin = {};
+        plugin.parse = function(postContent, callback) {
 
-plugin.parse = function(data, callback) {
-	var code = /(?:<pre>.*?<\/pre>|<code>.*?<\/code>)/g;
+                var code = /(?:<pre>.*?<\/pre>|<code>.*?<\/code>)/g;
 
-	if ( data && typeof data === 'string' ) {
-		//preview
-		data = parser(data, code);
-	} else if ( data.postData && data.postData.content && data.postData.content ) {
-		//post
-		data.postData.content =  parser(data.postData.content, code);
-	} else if ( data.userData && data.userData.signature && data.userData.signature ) {
-		//signature
-		data.userData.signature =  data.userData.signature
-			//Handle line breaks inside a paragraph.
-			.replace(/([^>]+)\n/g, "$1<br>")
-			//Text align left
-			.replace(/[^`]?<p>&lt;-((?:.|\n)*?)&lt;-<\/p>/gm,'<p class="text-left">$1</p>')
-			//Text align right
-			.replace(/[^`]?<p>-&gt;((?:.|\n)*?)-&gt;<\/p>/gm,'<p class="text-right">$1</p>')
-			//Text align center
-			.replace(/[^`\n]?<p>-&gt;((?:.|\n)*?)&lt;-<\/p>/gm,'<p class="text-center">$1</p>')
-			//Text align justify
-			.replace(/[^`]?<p>=&gt;((?:.|\n)*?)&lt;=<\/p>/gm,'<p class="text-justify">$1</p>')
-			//Underlined text.
-			.replace(/[^`]?~((?:.|\n)*?)~/g, "<u>$1</u>");
-	}
-	
-	callback(null, data);
-};
+                //console.log(postContent);
 
-function parser(data, code) {
-	//create a variable to capture code content
-	var codesTag = [];
-	//replace all codes tags by a var we can use in a regex later
-	data = data.replace(code, function(match){
-		codesTag.push(match);
-		return '__CODE__';
-	});
-	//do the replace on the whole
-	data = data
-		//Handle line breaks inside a paragraph.
-		.replace(/([^>]+)\n/g, "$1<br>")
-		//Text align left
-		.replace(/[^`]?<p>&lt;-((?:.|\n)*?)&lt;-<\/p>/gm,'<p class="text-left">$1</p>')
-		//Text align right
-		.replace(/[^`]?<p>-&gt;((?:.|\n)*?)-&gt;<\/p>/gm,'<p class="text-right">$1</p>')
-		//Text align center
-		.replace(/[^`\n]?<p>-&gt;((?:.|\n)*?)&lt;-<\/p>/gm,'<p class="text-center">$1</p>')
-		//Text align justify
-		.replace(/[^`]?<p>=&gt;((?:.|\n)*?)&lt;=<\/p>/gm,'<p class="text-justify">$1</p>')
-		//Underlined text.
-		.replace(/[^`]?~((?:.|\n)*?)~/g, "<u>$1</u>");
+                if (postContent && typeof postContent === 'string') {
+                        //preview
+                        postContent = parser(postContent, code);
+                } else if (postContent.postData && postContent.postData.content) {
+                        //post
+                        postContent.postData.content =  parser(postContent.postData.content, code);
+                } else if (postContent.userData && postContent.userData.signature) {
+                        //signature
+                        postContent.userData.signature =  parser(postContent.userData.signature);
+                }
 
-	//replace CODE with previously stocked code content
-	data = data.replace(/__CODE__/g, function(){
-		return codesTag.shift();
-	});
-	return data;
-};
+                callback(null, postContent);
+        };
 
-module.exports = plugin;
+        function parser(data, code) {
+                //create a variable to capture code content
+                var codesTag = [];
+                //replace all codes tags by a var we can use in a regex later
+                data = data.replace(code, function(match){
+                        codesTag.push(match);
+                        return '__CODE__';
+                });
+                //do the replace on the whole
+                //Handle line breaks inside a paragraph
+                data = data.replace(/[^\S](\n)/g, "<br>");
+                //Text align left
+                data = data.replace(/<p>&lt;-([^-]*(?:(?!&lt;-+|&lt;-)*)*)&lt;-<\/p>/gm,'<p class="text-left">$1</p>');
+                //Text align center
+                data = data.replace(/<p>-&gt;([^-]*(?:(?!-&gt;+|&lt;-)*)*)&lt;-<\/p>/gm,'<p class="text-center">$1</p>');
+                //Text align right
+                data = data.replace(/<p>-&gt;([^-]*(?:(?!-&gt;+|-&gt;)*)*)-&gt;<\/p>/gm,'<p class="text-right">$1</p>');
+                //Text align justify
+                data = data.replace(/<p>=&gt;([^=]*(?:(?!=&gt;+|&lt;=)*)*)&lt;=<\/p>/gm,'<p class="text-justify">$1</p>');
+                //Underlined text
+                data = data.replace(/~([\S\s]*?)~/g, "<u>$1</u>");
+                //replace CODE with previously stocked code content
+                data = data.replace(/__CODE__/, function(){
+                        return codesTag.shift();
+                });
+                return data;
+        }
+
+        module.exports = plugin;
+
+}(module));
