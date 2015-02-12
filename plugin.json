@@ -1,16 +1,19 @@
 {
-	"id": "nodebb-plugin-buttons-galore",
-	"name": "NodeBB: Buttons Galore",
-	"description": "Allows you to take NodeBB's composer to the next level to provide more user-friendly buttons.",
-	"url": "https://github.com/TedRinehart/nodebb-plugin-buttons-galore",
-	"library": "./library.js",
-	"hooks": [
-		{ "hook": "filter:parse.post", "method": "parse" },
-		{ "hook": "filter:parse.signature", "method": "parse" },
-		{ "hook": "filter:parse.raw", "method": "parse" }
-	],
+        "id": "nodebb-plugin-buttons-galore",
+        "name": "NodeBB: Buttons Galore",
+        "description": "Allows you to take NodeBB's composer to the next level to provide more user-friendly buttons.",
+        "url": "https://github.com/TedRinehart/nodebb-plugin-buttons-galore",
+        "nbbpm": {
+                "compatibility": "^0.6.0"
+        },        
+        "library": "./library.js",
+        "hooks": [
+                { "hook": "filter:parse.post", "method": "parse" },
+                { "hook": "filter:parse.signature", "method": "parse" },
+                { "hook": "filter:parse.raw", "method": "parse" }
+        ],
 
         "scripts": [
-		"./buttons.js"
-	]
+                "./buttons.js"
+        ]
 }
